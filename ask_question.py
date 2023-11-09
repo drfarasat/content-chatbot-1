@@ -3,6 +3,11 @@ import faiss
 import os
 import pickle
 
+# add env loading using dotenv
+from dotenv import load_dotenv
+load_dotenv()
+
+
 from langchain import OpenAI
 from langchain.chains import VectorDBQAWithSourcesChain
 

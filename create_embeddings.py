@@ -29,10 +29,12 @@ if __name__ == '__main__':
 
     r = requests.get(args.sitemap)
     xml = r.text
+    print (xml)
     raw = xmltodict.parse(xml)
-
+    print(raw)
     pages = []
     for info in raw['urlset']['url']:
+    #for info in raw['sitemapindex']['sitemap']:
         # info example: {'loc': 'https://www.paepper.com/...', 'lastmod': '2021-12-28'}
         url = info['loc']
         if args.filter in url:
